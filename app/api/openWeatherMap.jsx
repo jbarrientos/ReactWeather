@@ -25,6 +25,7 @@ module.exports = {
       function (res) {
         //console.log('OK:' + res.data.cod);
         //debugger;
+        //throw new Error(res.data.message);
         if (res.data.cod != OK_CODE && res.data.message != OK_MESSAGE) {
           throw new Error(res.data.message);
         } else {
