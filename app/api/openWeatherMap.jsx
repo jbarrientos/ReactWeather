@@ -26,8 +26,9 @@ module.exports = {
         //console.log('OK:' + res.data.cod);
         //debugger;
         //throw new Error(res.data.message);
-        if (res.data.cod != OK_CODE && res.data.message != OK_MESSAGE) {
-          throw new Error(res.data.message);
+        //if (res.data.cod != OK_CODE && res.data.message != OK_MESSAGE) {
+        if(res.data.count === 0){
+          throw new Error('No Weather data found for the city:' + location);
         } else {
           return res.data.list[0].main.temp;
         }
